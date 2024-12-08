@@ -111,7 +111,7 @@ public class ServerWindow {
                 String message;
                 while ((message = in.readLine()) != null) {
                     logArea.append("Received: " + message + "\n");
-                    broadcast(message, this); // Отправляем сообщение всем, кроме отправителя
+                    broadcast(message, this);
                 }
             } catch (IOException e) {
                 logArea.append("Client disconnected.\n");
@@ -130,7 +130,7 @@ public class ServerWindow {
 
         private void broadcast(String message, ClientHandler sender) {
             for (ClientHandler client : clients) {
-                if (client != sender) { // Не отправляем сообщение самому себе
+                if (client != sender) {
                     client.out.println(message);
                 }
             }

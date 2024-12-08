@@ -12,7 +12,7 @@ import java.net.Socket;
 public class ClientGUI extends JFrame {
     private static final int WIDTH = 400;
     private static final int HEIGHT = 300;
-    private static final String HISTORY_FILE = "chat_history.txt"; // История чата
+    private static final String HISTORY_FILE = "chat_history.txt";
 
     private final JTextArea log = new JTextArea();
     private final JPanel panelTop = new JPanel(new GridLayout(2, 3));
@@ -107,7 +107,7 @@ public class ClientGUI extends JFrame {
     private void sendMessage() {
         String message = tfMessage.getText();
         if (message != null && !message.isEmpty()) {
-            out.println(tfLogin.getText() + ": " + message); // Отправляем имя + сообщение
+            out.println(tfLogin.getText() + ": " + message);
             logMessage("You: " + message);
             tfMessage.setText("");
         }
